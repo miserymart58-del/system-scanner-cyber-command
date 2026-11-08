@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+
+# Secrets and local settings
+.env
+.env.*
+
+# Runtime output and logs
+*.log
+reports/
+exports/
+personal-reports/
+
+# Local repair state: never publish quarantine contents or manifests
+quarantine/
+SystemHealthScanner/
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/

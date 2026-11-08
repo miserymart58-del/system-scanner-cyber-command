@@ -1,0 +1,213 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-07T12:00:00+05:30",
+  "platform": "win32",
+  "elapsedSeconds": 18.4,
+  "cancelled": false,
+  "reducedMode": false,
+  "healthScore": 82,
+  "scoreMethod": "Synthetic example only. The live score uses the documented weighted finding counts.",
+  "consentedCategories": [
+    "security",
+    "storage",
+    "performance",
+    "startup"
+  ],
+  "counts": {
+    "critical": 0,
+    "warning": 2,
+    "info": 2
+  },
+  "modules": [
+    {
+      "module": "security",
+      "status": "ok",
+      "data": {
+        "defender": {
+          "available": true,
+          "antivirusEnabled": true,
+          "realTimeProtectionEnabled": true,
+          "signatureLastUpdated": "2026-11-06T08:00:00+05:30"
+        },
+        "firewall": [
+          {
+            "name": "Domain",
+            "enabled": true
+          },
+          {
+            "name": "Private",
+            "enabled": true
+          },
+          {
+            "name": "Public",
+            "enabled": true
+          }
+        ],
+        "recentDetections": [],
+        "accountPosture": {
+          "currentUserIsAdministrator": false,
+          "enabledLocalAccountCount": 2
+        }
+      },
+      "findings": [],
+      "notes": [
+        "Synthetic example; not data from a real computer."
+      ]
+    },
+    {
+      "module": "storage",
+      "status": "ok",
+      "data": {
+        "volumes": [
+          {
+            "drive": "C:",
+            "label": "Windows",
+            "totalGB": 475,
+            "usedGB": 442,
+            "freeGB": 33,
+            "freePercent": 6.9
+          }
+        ],
+        "largeFiles": [
+          {
+            "name": "old-video-backup.mp4",
+            "folder": "C:\\Users\\Example\\Videos",
+            "sizeGB": 3.2,
+            "lastWrite": "2025-12-01T10:00:00",
+            "ageDays": 341
+          }
+        ],
+        "physicalDisks": []
+      },
+      "findings": [
+        {
+          "severity": "Warning",
+          "title": "Low free space on C:",
+          "explanation": "Free space is below the scanner's 10% threshold.",
+          "evidence": "33 GB free; 6.9% free.",
+          "recommendedAction": "Review Windows Storage settings and remove only files you recognize and no longer need.",
+          "classification": "Confirmed capacity condition",
+          "confidence": "High"
+        },
+        {
+          "severity": "Info",
+          "title": "Large old file candidate",
+          "explanation": "A large file is older than six months; its content was not opened.",
+          "evidence": "One file over 512 MB and older than 180 days.",
+          "recommendedAction": "Check whether it is needed and backed up before moving or deleting it.",
+          "classification": "Cleanup candidate, not a confirmed problem",
+          "confidence": "Medium"
+        }
+      ],
+      "notes": [
+        "Folder metadata scan is synthetic in this sample."
+      ]
+    },
+    {
+      "module": "performance",
+      "status": "ok",
+      "data": {
+        "memory": {
+          "totalMB": 16384,
+          "usedMB": 15744,
+          "availableMB": 640,
+          "availablePercent": 3.9
+        },
+        "topMemoryProcesses": [
+          {
+            "name": "browser",
+            "processId": 4120,
+            "workingSetMB": 4200
+          }
+        ],
+        "topCpuProcesses": [
+          {
+            "name": "browser",
+            "processId": 4120,
+            "cpuPercentSampled": 22.1
+          }
+        ],
+        "pagefile": []
+      },
+      "findings": [
+        {
+          "severity": "Warning",
+          "title": "Low available physical memory at sample time",
+          "explanation": "Available RAM is low and may increase paging.",
+          "evidence": "640 MB of 16384 MB (3.9%).",
+          "recommendedAction": "Retest during normal use and close only applications you recognize; consider an upgrade only if this remains persistent.",
+          "classification": "Confirmed snapshot; persistent pressure needs retesting",
+          "confidence": "Medium"
+        }
+      ],
+      "notes": [
+        "Short sample only."
+      ]
+    },
+    {
+      "module": "startup",
+      "status": "ok",
+      "data": {
+        "counts": {
+          "startupEntries": 18,
+          "scheduledTaskActions": 5,
+          "automaticServices": 52
+        }
+      },
+      "findings": [
+        {
+          "severity": "Info",
+          "title": "Many startup entries are configured",
+          "explanation": "A large startup list can increase sign-in time.",
+          "evidence": "18 Run-key and Startup-folder items.",
+          "recommendedAction": "Review known non-essential apps in Windows Settings \u2192 Apps \u2192 Startup; do not disable drivers or security items.",
+          "classification": "Performance observation",
+          "confidence": "Medium"
+        }
+      ],
+      "notes": [
+        "Synthetic sample."
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "severity": "Warning",
+      "title": "Low free space on C:",
+      "explanation": "Free space is below the scanner's 10% threshold.",
+      "evidence": "33 GB free; 6.9% free.",
+      "recommendedAction": "Review Windows Storage settings and remove only files you recognize and no longer need.",
+      "classification": "Confirmed capacity condition",
+      "confidence": "High"
+    },
+    {
+      "severity": "Info",
+      "title": "Large old file candidate",
+      "explanation": "A large file is older than six months; its content was not opened.",
+      "evidence": "One file over 512 MB and older than 180 days.",
+      "recommendedAction": "Check whether it is needed and backed up before moving or deleting it.",
+      "classification": "Cleanup candidate, not a confirmed problem",
+      "confidence": "Medium"
+    },
+    {
+      "severity": "Warning",
+      "title": "Low available physical memory at sample time",
+      "explanation": "Available RAM is low and may increase paging.",
+      "evidence": "640 MB of 16384 MB (3.9%).",
+      "recommendedAction": "Retest during normal use and close only applications you recognize; consider an upgrade only if this remains persistent.",
+      "classification": "Confirmed snapshot; persistent pressure needs retesting",
+      "confidence": "Medium"
+    },
+    {
+      "severity": "Info",
+      "title": "Many startup entries are configured",
+      "explanation": "A large startup list can increase sign-in time.",
+      "evidence": "18 Run-key and Startup-folder items.",
+      "recommendedAction": "Review known non-essential apps in Windows Settings \u2192 Apps \u2192 Startup; do not disable drivers or security items.",
+      "classification": "Performance observation",
+      "confidence": "Medium"
+    }
+  ],
+  "scannerVersion": "2.0",
+  "repairCandidates": []
+}
